@@ -1,6 +1,5 @@
 import unittest
 import requests
-import json
 
 class TestPetStoreAPI(unittest.TestCase):
     def test_successful_request_number1(self):
