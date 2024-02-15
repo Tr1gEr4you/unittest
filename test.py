@@ -11,8 +11,6 @@ class TestPetStoreAPI(unittest.TestCase):
         
         response = requests.get(f"https://petstore.swagger.io/v2/pet/{pet_id}")
         
-        self.assertEqual(response.status_code, 200)
-        
         self.assertEqual(response.headers['Content-Type'], 'application/json')
         
         response_data = response.json()
@@ -23,7 +21,9 @@ class TestPetStoreAPI(unittest.TestCase):
         self.assertIn('tags', response_data)
         self.assertIn('status', response_data)
 
-    def test_invalid_parameters(self):
+        self.assertEqual(response.status_code, 200)
+
+    def test_invalid_request_returns_correct_number3(self):
         pet_id = "invalid_id"
 
         response = requests.get(f"https://petstore.swagger.io/v2/pet/{pet_id}")
