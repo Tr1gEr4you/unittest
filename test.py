@@ -1,7 +1,7 @@
 import unittest
 import requests
 
-class TestPetStoreAPI(unittest.TestCase):
+class TestAPI(unittest.TestCase):
     def test_successful_request_number1(self):
         response = requests.get("https://petstore.swagger.io")
         self.assertEqual(response.status_code, 200)
